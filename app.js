@@ -12,10 +12,6 @@ const notFound = require('./middleware/notFound')
 const errorHandlerMiddleware = require('./middleware/errorHandlerMiddleware')
 const storyRouter = require('./routes/storyRouter')
 
-const { AbortController } = require("node-abort-controller");
-
-global.AbortController = AbortController;
-
 const cors = require('cors');
 app.use(cors())
 app.use((req, res, next) => {
