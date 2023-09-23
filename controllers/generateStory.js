@@ -3,14 +3,14 @@ const { PromptTemplate } = require("langchain/prompts")
 const { LLMChain, SimpleSequentialChain } = require("langchain/chains")
 
 const api_key = process.env.OPENAI_API_KEY
-//console.log(api_key)
 
 const model = new OpenAI({
   temperature: 0.7,
-  openAIApiKey: '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'
+  openAIApiKey: api_key
 })
 
 const createStory = async (req, res, next) => {
+  console.log('story')
   const { promptInput, theme } = req.body
   try {
     const story_template = `Write a captivating story of less than 500 words based on the follwing topic: {prompt}. ${theme !== 'none' || '' ? `The theme or tone of the story should be: ${theme}` : ''} `
