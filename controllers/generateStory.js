@@ -7,7 +7,7 @@ const api_key = process.env.OPENAI_API_KEY
 
 const model = new OpenAI({
   temperature: 0.7,
-  openAIApiKey: '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'
+  openAIApiKey: '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'
 })
 
 const createStory = async (req, res, next) => {

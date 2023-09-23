@@ -18,6 +18,7 @@
     "http-status-codes": "^2.2.0",
     "langchain": "^0.0.150",
     "mongoose": "^7.5.2",
+    "node-abort-controller": "^3.1.1",
     "openai": "^4.7.1"
   }
 }
