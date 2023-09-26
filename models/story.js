@@ -12,11 +12,11 @@ const AIGeneratedStorySchema = new mongoose.Schema({
     },
     theme: {
         type: String,
-        default:''
+        default: ''
     },
-    upvotes: {
-        type: Number,
-        default: 0
+    upVotes: {
+        type:[String],
+        default:[]
     }
 }, { timestamps: true })
 module.exports = mongoose.model('AIGeneratedStory', AIGeneratedStorySchema)
