@@ -17,32 +17,19 @@ generates a short story based on that prompt
 - OpenAI generates a story based on a prompt and a theme provided by the user.
 - User can build a collaborative chain story by asking AI to refine the story furthur.
 - User can also like or unlike the stories.
-- A leaderboard shows the most liked stories.
-- This is a responsive web application and is compatible with devices of all widths.
-
-
-## Demo video of the project
-
-
-
-
-## Screenshots
-
-
-
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/Amanpr33t/EduChamp_AI_frontend
+  git clone https://github.com/Amanpr33t/EduChamp_AI_backend 
 ```
 
 Go to the project directory
 
 ```bash
-  cd EduChamp_AI_frontend
+  cd EduChamp_AI_backend 
 ```
 
 Install dependencies
@@ -54,16 +41,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
-```
-
-
-## Running Tests
-
-To run tests, run the following command
-
-```bash
-  npm run test
+  npm run dev
 ```
 
 
@@ -71,7 +49,8 @@ To run tests, run the following command
 
 To run this project, you will need to add the following environment variables to your .env file
 
-REACT_APP_BACKEND_URL
+MONGO_URI
+OPENAI_API_KEY
 
 
 ## Challenges faced
@@ -80,7 +59,6 @@ REACT_APP_BACKEND_URL
 
 - I had to learn how to integrate openAI with my node.js backend server. I used LangChain to integrate both of them.
 - Generating a collaborative chain story with the AI was a challenge. I achieved this task by feeding the summary of the previously generated story to the AI as a reference for current story to be generated.
-- I had to face some challenges while writing the unit tests. I was not able to create a mock http request for the components that send http requests. I was also not able to integrate redux with the unit tests.
 
 
 ## Scope of improvement
@@ -92,8 +70,6 @@ REACT_APP_BACKEND_URL
   The second API is called for subsequent requests and is used for generating a collaborative chain story based on previously generated stories.
 
   Instead of using two APIs and sending a summary of previously generated story to the AI, it would be better if the AI controls the chain story and remembers the previously generated story.
-
- - Unit tests for components having http request and using states managed by react-redux have not been added. 
 
 
 
