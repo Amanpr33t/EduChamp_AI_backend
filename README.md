@@ -7,8 +7,6 @@ generates a short story based on that prompt
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
-
 **Server:** Node, Express, MongoDB, LangChain
 
 
