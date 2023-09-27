@@ -16,6 +16,10 @@ generates a short story based on that prompt
 - User can build a collaborative chain story by asking AI to refine the story furthur.
 - User can also like or unlike the stories.
 
+## Workflow
+![Workflow](https://github.com/Amanpr33t/EduChamp_AI_backend/assets/114129054/f5763520-1062-475e-b6da-697f03ead1b6)
+
+
 ## Run Locally
 
 Clone the project
