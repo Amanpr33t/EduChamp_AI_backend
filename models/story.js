@@ -17,6 +17,10 @@ const AIGeneratedStorySchema = new mongoose.Schema({
     upVotes: {
         type:[String],
         default:[]
+    },
+    numberOfLikes:{
+        type:Number,
+        default:0
     }
 }, { timestamps: true })
 module.exports = mongoose.model('AIGeneratedStory', AIGeneratedStorySchema)

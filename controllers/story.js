@@ -35,8 +35,8 @@ const getStories = async (req, res, next) => {
 //This fiunction is used to fetch top 10 most voted stories
 const getTopStories = async (req, res, next) => {
     try {
-        const stories = await AIGeneratedStory.find({}).sort({ upvotes: -1 })
-        return res.status(StatusCodes.OK).json({ status: 'ok', count: stories.length, stories: stories.slice(0, 10) })
+        const stories = await AIGeneratedStory.find({}).sort({ numberOfLikes: -1 })
+        return res.status(StatusCodes.OK).json({ status: 'ok', stories: stories.slice(0, 5) })
     } catch (error) {
         next(error)
     }
@@ -59,7 +59,7 @@ const updateVotes = async (req, res, next) => {
         await AIGeneratedStory.findOneAndUpdate({
             _id: id
         },
-            { upVotes },
+            { upVotes, numberOfLikes: upVotes.length },
             { new: true, runValidators: true })
         return res.status(StatusCodes.OK).json({ status: 'ok', msg: 'Votes have been updated' })
     } catch (error) {

@@ -13,6 +13,9 @@ const model = new OpenAI({
 const storyChain = async (req, res, next) => {
     const { promptInput, summaryOfStory, theme } = req.body
     try {
+        if(promptInput&&promptInput.length>150){
+            throw new Error('Length of the prompt cannot be more than 150 characters')
+        }
         const storyTemplate = `This is the summary of a story that you had earlier generated: ${summaryOfStory}. Generate a captivating story in less than 500 words based on this prompt:${promptInput}. The story you generate now should be an extension of the summary that you had generated earlier. ${theme ? `Here is the theme of the story that you should generate: ${theme}` : ''}.{prompt}`
 
         const storyPrompt = new PromptTemplate({
