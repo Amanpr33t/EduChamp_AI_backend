@@ -36,7 +36,7 @@ const getStories = async (req, res, next) => {
 const getTopStories = async (req, res, next) => {
     try {
         const stories = await AIGeneratedStory.find({}).sort({ numberOfLikes: -1 })
-        return res.status(StatusCodes.OK).json({ status: 'ok', stories: stories.slice(0, 5) })
+        return res.status(StatusCodes.OK).json({ status: 'ok', stories: stories.slice(0, 10) })
     } catch (error) {
         next(error)
     }
