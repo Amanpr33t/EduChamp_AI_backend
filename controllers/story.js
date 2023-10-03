@@ -16,17 +16,21 @@ const saveStory = async (req, res, next) => {
 const getSingleStory = async (req, res, next) => {
     try {
         const story = await AIGeneratedStory.find({ _id: req.params.id })
-        return res.status(StatusCodes.OK).json({ status: 'ok', story })
+        if (story) {
+            return res.status(StatusCodes.OK).json({ status: 'ok', story })
+        }
+        throw new CustomAPIError('Story not found', StatusCodes.NOT_FOUND)
     } catch (error) {
         next(error)
     }
 }
 
 //This function is used to fetch all stories from the database
+
 const getStories = async (req, res, next) => {
     try {
         const stories = await AIGeneratedStory.find({})
-        return res.status(StatusCodes.OK).json({ status: 'ok', count: stories.length, stories })
+        return res.status(200).json({ status: 'ok', count: stories.length, stories })
     } catch (error) {
         next(error)
     }
